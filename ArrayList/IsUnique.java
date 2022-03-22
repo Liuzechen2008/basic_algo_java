@@ -1,7 +1,11 @@
-import java.util.Arrays;
+
 
 class IsUnique {
-    public boolean isUnique(String astr) {
+    public static void main(String[] args) {
+        System.out.println(isUnique("abc"));
+        System.out.println(isUnique("aba"));
+    }
+    public static boolean isUnique(String astr) {
         int len = astr.length();
         if(len > 128){ return false;}
         boolean[] sameChars = new boolean[128];
