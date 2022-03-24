@@ -1,5 +1,11 @@
 
-
+/**
+ * You should first ask your interviewer if the string is an ASCII string or a Unicode string.
+ * We'll assume for simplicity the character set is ASCII.
+ * If this assumption is not valid, we would need to increase the storage size.
+ * @author liuzechen
+ * @date 2022/03/22
+ **/
 class IsUnique {
     public static void main(String[] args) {
         System.out.println(isUnique("abc"));
