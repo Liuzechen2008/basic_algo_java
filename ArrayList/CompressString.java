@@ -4,7 +4,7 @@
  * If the "compressed" string would not become smaller than the original string, your method should return the original string.
  * You can assume the string has only uppercase and lowercase letters (a - z).
  *
- * @author liuzechen
+ * @author Zechen Liu
  * @date 2022/03/25
  **/
 public class CompressString {

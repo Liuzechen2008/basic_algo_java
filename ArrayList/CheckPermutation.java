@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author liuzechen
+ * @author Zechen Liu
  * @date 2022/03/22
  **/
 public class CheckPermutation {

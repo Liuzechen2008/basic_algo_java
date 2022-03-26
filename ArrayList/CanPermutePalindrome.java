@@ -6,7 +6,7 @@ import java.util.Set;
  * A palindrome is a word or phrase that is the same forwards and backwards.
  * A permutation is a rearrangement of letters.
  * The palindrome does not need to be limited to just dictionary words.
- * @author liuzechen
+ * @author Zechen Liu
  * @date 2022/03/24
  **/
 public class CanPermutePalindrome {
