@@ -7,11 +7,11 @@ import java.util.Random;
 public class ListNodeUtil {
     public static ListNode initListNode(int length) {
         Random r = new Random();
-        ListNode dummy = new ListNode(r.nextInt(length));
+        ListNode dummy = new ListNode(r.nextInt(length)+1);
         ListNode nextNode;
         nextNode = dummy;
         for (int i = 1; i < length; i++) {
-            ListNode node = new ListNode(r.nextInt(length));
+            ListNode node = new ListNode(r.nextInt(length)+1);
             nextNode.next = node;
             nextNode = nextNode.next;
         }
