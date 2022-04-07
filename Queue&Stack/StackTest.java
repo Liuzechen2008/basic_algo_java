@@ -4,7 +4,10 @@
  **/
 public class StackTest {
     public static void main(String[] args) {
-        StackOfPlates stack = new StackOfPlates(2);
+        StackOfPlates stack= new StackOfPlates(2);
+        testPopAt(stack);
+    }
+    private static void testPopAt(StackOfPlates stack){
         stack.push(1);
         stack.push(2);
         stack.push(3);
