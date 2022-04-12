@@ -6,12 +6,19 @@ import java.util.*;
  **/
 public class FindWhetherExistsPath {
     public static void main(String[] args) {
-        int[][] ns = {
+        int[][] ns1 = {
                 {0, 1},
                 {1, 2},
                 {2, 1},
         };
-        System.out.println(findWhetherExistsPath(4, ns, 0, 3));
+        int[][] ns2 = {
+                {0, 1},
+                {1, 2},
+                {2, 1},
+                {2, 3},
+        };
+        System.out.println(findWhetherExistsPath(4, ns1, 0, 3));
+        System.out.println(findWhetherExistsPath(4, ns2, 0, 3));
     }
 
     private static boolean findWhetherExistsPath(int n, int[][] graph, int start, int target) {
