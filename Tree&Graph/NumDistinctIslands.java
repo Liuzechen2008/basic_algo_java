@@ -13,7 +13,7 @@ import java.util.Set;
 public class NumDistinctIslands {
     public static void main(String[] args) {
         int[][] grid1 = {
-                {1, 1, 0, 1, 1},
+                {1, 1, 0, 0, 1},
                 {1, 1, 0, 0, 0},
                 {0, 0, 0, 1, 1},
                 {1, 1, 0, 1, 1},
@@ -24,7 +24,7 @@ public class NumDistinctIslands {
                 {0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0},
                 {1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1},
         };
-        System.out.println(numDistinctIslands(grid1));//2
+        System.out.println(numDistinctIslands(grid1));//3
         System.out.println(numDistinctIslands(grid2));//15
     }
 
@@ -34,7 +34,7 @@ public class NumDistinctIslands {
             for (int j = 0; j < grid[0].length; j++) {
                 if (grid[i][j] == 1) {
                     StringBuilder sb = new StringBuilder();
-                    dfs(grid, i, j, sb, 0);
+                    dfs(grid, i, j, sb, "start:");
                     result.add(sb.toString());
                 }
             }
@@ -45,21 +45,15 @@ public class NumDistinctIslands {
         return result.size();
     }
 
-    private static void dfs(int[][] grid, int i, int j, StringBuilder sb, int dir) {
+    private static void dfs(int[][] grid, int i, int j, StringBuilder sb, String dir) {
         if (i == -1 || j == -1 || i == grid.length || j == grid[0].length || grid[i][j] == 0) {
             return;
         }
-        grid[i][j] = 0;
-
-
-        sb.append(dir).append(',');
-
-        dfs(grid, i - 1, j, sb, 1); // up
-        dfs(grid, i + 1, j, sb, 2); // down
-        dfs(grid, i, j - 1, sb, 3); // left
-        dfs(grid, i, j + 1, sb, 4); // right
-
-        sb.append(-dir).append(',');
-
+        grid[i][j] = 0;//visited
+        sb.append(dir);
+        dfs(grid, i - 1, j, sb, "u"); // up
+        dfs(grid, i + 1, j, sb, "d"); // down
+        dfs(grid, i, j - 1, sb, "l"); // left
+        dfs(grid, i, j + 1, sb, "r"); // right
     }
 }
