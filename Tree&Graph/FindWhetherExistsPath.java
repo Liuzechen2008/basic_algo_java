@@ -1,6 +1,7 @@
 import java.util.*;
 
 /**
+ * Given a directed graph, design an algorithm to find out whether there is a route between two nodes.
  * @author Zechen Liu
  * @date 2022/04/08
  **/
