@@ -8,7 +8,7 @@ Because they're stored together, we are able to access a random element in const
 ## 2. LinkedList
 Linked list is a linear data structure which link all the separated elements together by the **reference field**.
 It takes us O(N) time on average to visit an element by index, where N is the length of the linked list.
-## 3.Queue & Stack
+## 3. Queue & Stack
 ### 1) Queue and BFS
 
 ### 2) Stack and DFS

@@ -34,26 +34,24 @@ public class NumDistinctIslands {
             for (int j = 0; j < grid[0].length; j++) {
                 if (grid[i][j] == 1) {
                     StringBuilder sb = new StringBuilder();
-                    dfs(grid, i, j, sb, "start:");
+                    dfs(grid, i, j, sb,"s");
                     result.add(sb.toString());
                 }
             }
         }
-        for (String s : result) {
-            System.out.println(s);
-        }
         return result.size();
     }
 
-    private static void dfs(int[][] grid, int i, int j, StringBuilder sb, String dir) {
+    private static void dfs(int[][] grid, int i, int j, StringBuilder path,String s) {
         if (i == -1 || j == -1 || i == grid.length || j == grid[0].length || grid[i][j] == 0) {
             return;
         }
-        grid[i][j] = 0;//visited
-        sb.append(dir);
-        dfs(grid, i - 1, j, sb, "u"); // up
-        dfs(grid, i + 1, j, sb, "d"); // down
-        dfs(grid, i, j - 1, sb, "l"); // left
-        dfs(grid, i, j + 1, sb, "r"); // right
+        grid[i][j] = 0;
+        path.append(s);
+        dfs(grid, i + 1, j, path,"d");
+        dfs(grid, i - 1, j, path,"u");
+        dfs(grid, i, j + 1, path,"r");
+        dfs(grid, i, j - 1, path,"l");
+        path.append(s);
     }
 }
